@@ -6,23 +6,24 @@ namespace CalculatorNS
 {
     public class Exercise3
     {
-        public string deleteSymb(string p1, string p2)
+        public string deleteSymb(string a1, string b1)
         {
-            int length1=p1.Length;
-            for (int i = 0; i < length1; i++)
-            {
-                for (int j = 0; j < p2.Length; j++)
-                {
-                    if (p1[i].CompareTo(p2[j]) == 0)
-                    {
-                        p1.Remove(i, 1);
-                        j = 0;
-                        length1 = length1 - 1;
-                    }
+            bool flag;
 
-                }
+            for (int i = 0; i < b1.Length; i++)
+            {
+                do
+                {
+                    flag = a1.Contains(b1[i].ToString());
+                    if (flag == true)
+                    {
+                        int numberOfSymb;
+                        numberOfSymb = a1.IndexOf(b1[i]);
+                        a1 = a1.Remove(numberOfSymb, 1);
+                    }
+                } while (flag == true);
             }
-            return p1;
+            return a1;
         }
     }
 }

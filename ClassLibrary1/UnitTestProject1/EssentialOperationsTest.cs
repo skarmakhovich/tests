@@ -87,7 +87,14 @@ namespace CalculatorNS.Tests
         {
             var Exercise3 = new Exercise3();
             string result = Exercise3.deleteSymb("ba","ac");
-            Assert.AreEqual("ba", result);
+            Assert.AreEqual("b", result);
+        }
+        [TestMethod()]
+        public void truemultideleteSymb()
+        {
+            var Exercise3 = new Exercise3();
+            string result = Exercise3.deleteSymb("qadeee", "vce");
+            Assert.AreEqual("qad", result);
         }
     }
 }
